@@ -165,7 +165,7 @@ export default function Editor() {
   // Socket connection
   const connectSocket = () => {
     const socket = io(
-      process.env.NEXT_PUBLIC_SOCKET_URL || "http://localhost:4000",
+      process.env.NEXT_PUBLIC_SOCKET_URL || "http://localhost:4001",
       {
         auth: {
           uid: auth.currentUser?.uid,
