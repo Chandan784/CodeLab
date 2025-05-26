@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3001:3001"  # container port 3000 mapped to host port 3001
+    depends_on:
+      - backend
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:5006
+    restart: always
+
+  backend:
+    build: ./backend
+    ports:
+      - "5006:5006"
+    restart: always
